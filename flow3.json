@@ -1,37 +1,10 @@
 [
     {
-        "id": "f68cbc14.dbf48",
-        "type": "tab",
-        "label": "流程9",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "24d398fa.b1ddc8",
-        "type": "inject",
-        "z": "f68cbc14.dbf48",
-        "name": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "5",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "x": 130,
-        "y": 240,
-        "wires": [
-            [
-                "a4d77b3f.c82078"
-            ]
-        ]
-    },
-    {
         "id": "a4d77b3f.c82078",
         "type": "function",
         "z": "f68cbc14.dbf48",
         "name": "Payload",
-        "func": "msg.headers={\n    deviceKey:\"U0CKuL0S5cMZK4lm\"\n};\nmsg.payload=\"deg,,25.3\"\nreturn msg;",
+        "func": "msg.headers={\n    deviceKey:\"U0CKuL0S5cMZK4lm\"\n};\nmsg.payload=\"deg,,25.3\"\nmsg.payload=\"hum,,87.0\"\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 320,
@@ -41,53 +14,5 @@
                 "87e0a8bf.af4928"
             ]
         ]
-    },
-    {
-        "id": "87e0a8bf.af4928",
-        "type": "http request",
-        "z": "f68cbc14.dbf48",
-        "name": "",
-        "method": "POST",
-        "ret": "txt",
-        "paytoqs": false,
-        "url": "https://api.mediatek.com/mcs/v2/devices/DblTVUzl/datapoints.csv",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "x": 500,
-        "y": 260,
-        "wires": [
-            [
-                "26edf24e.b90cfe",
-                "e869103d.02026"
-            ]
-        ]
-    },
-    {
-        "id": "26edf24e.b90cfe",
-        "type": "http response",
-        "z": "f68cbc14.dbf48",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 680,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "e869103d.02026",
-        "type": "debug",
-        "z": "f68cbc14.dbf48",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "x": 690,
-        "y": 340,
-        "wires": []
     }
 ]

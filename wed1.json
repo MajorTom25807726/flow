@@ -1,0 +1,69 @@
+[
+    {
+        "id": "7f762c3.c7266d4",
+        "type": "tab",
+        "label": "流程10",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f4a772c2.50734",
+        "type": "http in",
+        "z": "7f762c3.c7266d4",
+        "name": "",
+        "url": "/data",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 60,
+        "y": 240,
+        "wires": [
+            [
+                "e44c7044.3cf28"
+            ]
+        ]
+    },
+    {
+        "id": "e44c7044.3cf28",
+        "type": "random",
+        "z": "7f762c3.c7266d4",
+        "name": "",
+        "low": "1",
+        "high": "10",
+        "inte": "true",
+        "property": "payload",
+        "x": 200,
+        "y": 240,
+        "wires": [
+            [
+                "6a47c512.e7babc",
+                "81191e77.adade"
+            ]
+        ]
+    },
+    {
+        "id": "6a47c512.e7babc",
+        "type": "http response",
+        "z": "7f762c3.c7266d4",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 370,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "81191e77.adade",
+        "type": "debug",
+        "z": "7f762c3.c7266d4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 340,
+        "y": 300,
+        "wires": []
+    }
+]
